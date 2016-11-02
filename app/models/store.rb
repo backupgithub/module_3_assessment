@@ -1,7 +1,7 @@
 class Store
+  attr_reader :long_name, :city, :distance, :phone, :store_type, :store_id
 
   def initialize(store)
-    binding.pry
     @long_name = store[:longName]
     @city = store[:city]
     @distance = store[:distance]
