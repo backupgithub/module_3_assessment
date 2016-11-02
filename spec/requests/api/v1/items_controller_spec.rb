@@ -70,4 +70,19 @@ describe "Items" do
     expect(item['name']).to eq('Enormous Linen Car')
     expect(item['description']).to eq("Voluptas quia quod hic iste. Harum tempora et faci...")
   end
+
+  it "can create an item" do
+    item_params = {name: "Rustic Linen Hat",
+      description: "Eum ipsa libero at expedita deserunt. Autem ut quo...",
+      image_url: "http://robohash.org/499.png?set=set2&bgset=bg1&siz..."
+    }
+
+    post "/api/v1/items", item: item_params
+    item = Item.last
+
+    expect(response.status).to eq(201)
+    expect(item['name']).to eq("Rustic Linen Hat")
+    expect(item['description']).to eq("Eum ipsa libero at expedita deserunt. Autem ut quo...")
+    expect(item['image_url']).to eq("http://robohash.org/499.png?set=set2&bgset=bg1&siz...")
+  end
 end
