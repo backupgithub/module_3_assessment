@@ -21,7 +21,6 @@ class Store
   end
 
   def self.total_stores_found_by_zipcode(zipcode)
-    binding.pry
-    service.get_total_stores_found_by_zipcode(zipcode)
+    service.get_total_stores_found_by_zipcode(zipcode)[:total]
   end
 end
