@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Items" do
   it "returns all items" do
-    items_2 = Item.create(
+    item_1 = Item.create(
       id: 1,
       name: "Enormous Linen Car",
       description: "Voluptas quia quod hic iste. Harum tempora et faci...",
