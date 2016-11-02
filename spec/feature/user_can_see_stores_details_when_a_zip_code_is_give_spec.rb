@@ -7,8 +7,8 @@ RSpec.feature "When a user search stores by zipcode" do
       # When I visit "/"
       visit '/'
       # And I fill in a search box with "80202" and click "search"
-      within('search-field') do
-        fill_in 'zipcode', with: 80202
+      within('.search-field') do
+        fill_in :zipcode, with: 80202
         click_on 'Search'
       end
       # Then my current path should be "/search" (ignoring params)
