@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   resources :users,  only: [:index, :show]
 
   get 'search', to: 'search#index'
+
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :items, only: [:index, :show, :create, :destroy]
+    end
+  end
 end
