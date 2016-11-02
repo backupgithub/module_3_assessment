@@ -42,7 +42,7 @@ describe "Items" do
     expect(last_item['created_at']).to eq(nil)
   end
 
-  it "returns all items" do
+  it "returns one single item" do
     item_1 = Item.create(
     id: 1,
     name: "Enormous Linen Car",
