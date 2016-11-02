@@ -12,6 +12,10 @@ gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "minitest-rails"
+gem 'faraday'
+gem 'figaro'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'responders'
 
 group :development do
   gem "spring"
@@ -20,4 +24,18 @@ end
 group :development, :test do
   gem "minitest-rails-capybara"
   gem "pry", :require => "pry"
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'launchy'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
 end
