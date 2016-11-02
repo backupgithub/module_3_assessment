@@ -19,4 +19,9 @@ class Store
       new(store)
     end
   end
+
+  def self.total_stores_found_by_zipcode(zipcode)
+    binding.pry
+    service.get_total_stores_found_by_zipcode(zipcode)
+  end
 end
