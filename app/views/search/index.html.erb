@@ -1,0 +1,31 @@
+<center>
+  <h3>Please see stores within 25 miles from Zipcode 80202</h3>
+</center>
+<br>
+
+<center>
+  <table class='info'>
+    <th>
+      <td>Long Name</td>
+      <td>City</td>
+      <td>Distance</td>
+      <td>Phone</td>
+      <td>Store Type</td>
+    </th>
+    <% @stores.each do |store| %>
+    <tr class='store-info'>
+      <td><%= store.long_name %></td>
+      <td><%= store.city %></td>
+      <td><%= store.distance %></td>
+      <td><%= store.phone %></td>
+      <td><%= store.store_type %></td>
+    </tr>
+    <% end %>
+  </table>
+</center>
+
+
+<br>
+<center>
+  <h4> Found a total of <%= @total_store_found %> store in your area</h4>
+</center>
