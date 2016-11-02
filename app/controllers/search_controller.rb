@@ -1,12 +1,12 @@
 class SearchController < ApplicationController
   def index
-    @stores = Store.find_all_stores_by_zip_code(params[:zipcode])
+    @stores = Store.all_stores_by_zip_code(params[:zipcode])
   end
 end
 
 
 class Store
-  def self.find_all_stores_by_zip_code(zipcode)
+  def self.get_all_stores_by_zip_code(zipcode)
     response = connection.get do |req|
       req.url ("stores(area(#{zipcode},25))")
       req.params['apiKey'] = ENV['bestbuykey']
