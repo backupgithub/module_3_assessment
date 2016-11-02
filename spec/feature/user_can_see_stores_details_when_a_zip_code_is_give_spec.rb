@@ -16,8 +16,11 @@ RSpec.feature "When a user search stores by zipcode" do
       # And I should see stores within 25 miles of 80202
       expect(page).to have_content('Please see stores within 25 miles from Zipcode 80202')
       # And I should see a message that says "17 Total Stores"
-      expect(page).to have_content("Found a total of 17 store in your area")
+      expect(page).to have_content("Found a total of 17 store(s) in your area")
       # And I should see exactly 15 results
+      within('.info') do
+        expect(page).to have_selector('.store-info', count: 15)
+      end
       # And I should see the long name, city, distance, phone number and store type for each of the 15 results
       within('.info') do
         expect(page).to have_content('Name')
@@ -25,8 +28,11 @@ RSpec.feature "When a user search stores by zipcode" do
         expect(page).to have_content('Distance')
         expect(page).to have_content('Phone')
         expect(page).to have_content('Store Type')
-        expect(page).to have_selector('.store-info', count: 15)
-        binding.pry
+        expect(page).to have_content('Best Buy')
+        expect(page).to have_content('Belmar')
+        expect(page).to have_content('Southglenn')
+        expect(page).to have_content('Denver')
+        expect(page).to have_content('303-252-8677')
       end
     end
   end
