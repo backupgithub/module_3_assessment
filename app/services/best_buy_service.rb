@@ -11,6 +11,8 @@ class BestBuyService
     parser(response)
   end
 
+  private
+
   def parser(response)
     JSON.parse(response.body, symbolize_names: true)
   end
