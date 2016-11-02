@@ -15,7 +15,7 @@ class Store
   end
 
   def self.all_stores_by_zip_code(zipcode)
-    service.get_all_stores_by_zip_code(zipcode)[:stores].each do |store|
+    service.get_all_stores_by_zip_code(zipcode)[:stores].map do |store|
       new(store)
     end
   end
