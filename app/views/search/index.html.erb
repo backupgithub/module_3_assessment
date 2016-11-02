@@ -5,13 +5,13 @@
 
 <center>
   <table class='info'>
-    <th>
-      <td>Long Name</td>
-      <td>City</td>
-      <td>Distance</td>
-      <td>Phone</td>
-      <td>Store Type</td>
-    </th>
+    <tr>
+      <th>Long Name</th>
+      <th>City</th>
+      <th>Distance</th>
+      <th>Prone</th>
+      <th>Store Type</th>
+    </tr>
     <% @stores.each do |store| %>
     <tr class='store-info'>
       <td><%= store.long_name %></td>
@@ -27,5 +27,5 @@
 
 <br>
 <center>
-  <h4> Found a total of <%= @total_store_found %> store in your area</h4>
+  <h4> Found a total of <%= @total_store_found %> store(s) in your area</h4>
 </center>

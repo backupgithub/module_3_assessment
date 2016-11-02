@@ -26,6 +26,7 @@ RSpec.feature "When a user search stores by zipcode" do
         expect(page).to have_content('Phone')
         expect(page).to have_content('Store Type')
         expect(page).to have_selector('.store-info', count: 15)
+        binding.pry
       end
     end
   end
